@@ -1,0 +1,22 @@
+# 运行时数据（可能包含家庭成员信息）
+server/data/*.json
+!server/data/.gitkeep
+
+# Playwright / 测试临时产物
+.playwright-cli/
+playwright-report/
+test-results/
+
+# 依赖与日志
+node_modules/
+*.log
+
+# 操作系统 / 编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 本地环境变量（Token / 密钥）
+.env
+.env.*
+!.env.example

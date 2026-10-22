@@ -1,0 +1,188 @@
+/* ============================================================
+   Design Tokens —— Apple HIG / 系统语义色
+   仅使用系统语义色，不引入霓虹渐变与拟物材质
+   ============================================================ */
+
+:root {
+  /* —— 字体：SF Pro / 苹方 —— */
+  --font-sf: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    sans-serif;
+  --font-round: "SF Pro Rounded", -apple-system, "PingFang SC", sans-serif;
+
+  /* —— 字号（HIG 文本样式） —— */
+  --fs-largeTitle: 34px;
+  --fs-title1: 28px;
+  --fs-title2: 22px;
+  --fs-title3: 20px;
+  --fs-headline: 17px;
+  --fs-body: 17px;
+  --fs-callout: 16px;
+  --fs-subhead: 15px;
+  --fs-footnote: 13px;
+  --fs-caption1: 12px;
+  --fs-caption2: 11px;
+
+  /* —— 圆角（16–24 为主，小控件 10–12） —— */
+  --r-sm: 10px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+  --r-2xl: 24px;
+  --r-pill: 999px;
+
+  /* —— 间距（8pt 网格） —— */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+
+  /* —— 动效：iOS spring 近似 + 降级 —— */
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --dur-fast: 180ms;
+  --dur-base: 280ms;
+  --dur-slow: 420ms;
+
+  /* —— 阴影：轻 —— */
+  --sh-1: 0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --sh-2: 0 2px 6px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --sh-3: 0 8px 24px rgba(0, 0, 0, 0.08), 0 24px 64px rgba(0, 0, 0, 0.1);
+
+  /* —— 毛玻璃（仅用于地图浮层 / 底部 Sheet） —— */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-bg-strong: rgba(255, 255, 255, 0.82);
+  --glass-blur: saturate(180%) blur(24px);
+  --glass-border: rgba(255, 255, 255, 0.6);
+
+  /* —— 系统语义色（Light） —— */
+  --bg-system: #ffffff;
+  --bg-secondary: #f2f2f7;
+  --bg-grouped: #f2f2f7;
+  --bg-tertiary: #ffffff;
+  --bg-elevated: #ffffff;
+  --fill-quaternary: rgba(116, 116, 128, 0.08);
+  --fill-tertiary: rgba(118, 118, 128, 0.12);
+  --fill-secondary: rgba(120, 120, 128, 0.16);
+  --separator: rgba(60, 60, 67, 0.29);
+  --separator-opaque: #c6c6c8;
+
+  --label: #000000;
+  --label-2: rgba(60, 60, 67, 0.6);       /* secondaryLabel，AA 达标 */
+  --label-3: rgba(60, 60, 67, 0.42);
+  --label-4: rgba(60, 60, 67, 0.24);
+  --label-inverse: #ffffff;
+
+  --tint: #007aff;                        /* systemBlue */
+  --tint-soft: rgba(0, 122, 255, 0.12);
+  --green: #248a3d;                       /* systemGreen(dark text) AA */
+  --green-fill: #34c759;
+  --orange: #c93400;                      /* 用于“已点亮”文字，AA */
+  --orange-fill: #ff9500;
+  --red: #d70015;
+  --yellow-fill: #ffcc00;
+  --indigo: #5856d6;
+  --pink: #ff2d55;
+  --gray: #8e8e93;
+
+  /* —— 地图配色（低饱和） —— */
+  --map-water: #eef1f5;
+  --map-land: #f7f7f9;
+  --map-land-stroke: #dcdce3;
+  --map-unlit: #e3e3ea;                   /* 未点亮地级市 */
+  --map-unlit-stroke: #cfcfd8;
+  --map-lit: #ff9f0a;                     /* 家庭已点亮：暖橙（打卡即上色） */
+  --map-lit-soft: rgba(255, 159, 10, 0.16);
+  --map-reco-todo: #9a9aa4;               /* 推荐未打卡：灰度虚线徽章 */
+  --map-reco-done: #248a3d;               /* 推荐已打卡：彩色对勾 */
+  --map-label: #6b6b76;
+
+  /* —— 图层区分 —— */
+  --layer-family: #ff9f0a;
+  --layer-reco: #5856d6;
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg-system: #000000;
+  --bg-secondary: #1c1c1e;
+  --bg-grouped: #000000;
+  --bg-tertiary: #2c2c2e;
+  --bg-elevated: #1c1c1e;
+  --fill-quaternary: rgba(118, 118, 128, 0.18);
+  --fill-tertiary: rgba(118, 118, 128, 0.24);
+  --fill-secondary: rgba(120, 120, 128, 0.32);
+  --separator: rgba(84, 84, 88, 0.65);
+  --separator-opaque: #38383a;
+
+  --label: #ffffff;
+  --label-2: rgba(235, 235, 245, 0.6);
+  --label-3: rgba(235, 235, 245, 0.42);
+  --label-4: rgba(235, 235, 245, 0.24);
+  --label-inverse: #000000;
+
+  --tint: #0a84ff;
+  --tint-soft: rgba(10, 132, 255, 0.18);
+  --green: #30d158;
+  --green-fill: #30d158;
+  --orange: #ff9f0a;
+  --orange-fill: #ff9f0a;
+  --red: #ff453a;
+  --indigo: #7d7aff;
+  --gray: #8e8e93;
+
+  --glass-bg: rgba(28, 28, 30, 0.68);
+  --glass-bg-strong: rgba(28, 28, 30, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --sh-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --sh-2: 0 2px 6px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.36);
+  --sh-3: 0 8px 24px rgba(0, 0, 0, 0.5), 0 24px 64px rgba(0, 0, 0, 0.44);
+
+  --map-water: #0e1014;
+  --map-land: #1a1c20;
+  --map-land-stroke: #2f3238;
+  --map-unlit: #2c2f35;
+  --map-unlit-stroke: #3a3e45;
+  --map-lit: #ff9f0a;
+  --map-lit-soft: rgba(255, 159, 10, 0.2);
+  --map-reco-todo: #7c7c86;
+  --map-reco-done: #30d158;
+  --map-label: #9a9aa4;
+
+  color-scheme: dark;
+}
+
+/* —— 减少动效 —— */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur-base: 1ms;
+    --dur-slow: 1ms;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root[data-motion="reduce"] {
+  --dur-fast: 1ms;
+  --dur-base: 1ms;
+  --dur-slow: 1ms;
+}
+:root[data-motion="reduce"] *,
+:root[data-motion="reduce"] *::before,
+:root[data-motion="reduce"] *::after {
+  animation-duration: 1ms !important;
+  transition-duration: 1ms !important;
+}

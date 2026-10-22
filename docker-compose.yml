@@ -1,0 +1,13 @@
+services:
+  ftm:
+    build: .
+    container_name: family-travel-map
+    ports:
+      - "8787:8787"
+    environment:
+      # 天地图浏览器端 tk（可选）：设置后全家默认启用官方底图（自带审图号）
+      - TIANDITU_TOKEN=${TIANDITU_TOKEN:-}
+    volumes:
+      # NAS 数据持久化目录（备份这个目录 = 备份全部家庭数据）
+      - ./server/data:/app/server/data
+    restart: unless-stopped
