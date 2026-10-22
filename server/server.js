@@ -290,7 +290,7 @@ const server = http.createServer(async (req, res) => {
 
   try {
     if (p === '/api/health') {
-      return send(res, 200, { ok: true, version: '1.0.0', name: 'family-travel-map', time: new Date().toISOString() });
+      return send(res, 200, { ok: true, version: '0.1.0', name: 'family-travel-map', time: new Date().toISOString() });
     }
 
     if (p === '/api/bootstrap' && req.method === 'POST') {

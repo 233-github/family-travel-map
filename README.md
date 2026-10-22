@@ -178,7 +178,7 @@ curl http://localhost:8787/api/health
 ```
 
 ```json
-{"ok":true,"version":"1.0.0","name":"family-travel-map","time":"2026-10-22T02:50:05.000Z"}
+{"ok":true,"version":"0.1.0","name":"family-travel-map","time":"2026-10-22T02:50:05.000Z"}
 ```
 
 在没有任何本地数据的浏览器中打开 `http://localhost:8787`，能看到中国地图、顶部「已点亮 8/333 个地级市」和演示家庭，即启动成功。
@@ -329,7 +329,7 @@ curl http://localhost:8787/api/health
 ```
 
 ```json
-{"ok":true,"version":"1.0.0","name":"family-travel-map","time":"2026-10-22T02:50:05.000Z"}
+{"ok":true,"version":"0.1.0","name":"family-travel-map","time":"2026-10-22T02:50:05.000Z"}
 ```
 
 **首次初始化（只允许一次）**
